@@ -18,7 +18,7 @@ jobs:
 
       - name: 拉取Gitee仓库内容
         run: |
-          git clone --branch gateway-plm https://${{ secrets.GITEE_USERNAME }}:${{ secrets.GITEE_TOKEN }}@gitee.com/taozhang09/thingsboard-gateway.git source-code
+          git clone --branch master https://${{ secrets.GITEE_USERNAME }}:${{ secrets.GITEE_TOKEN }}@gitee.com/taozhang09/thingsboard-gateway.git source-code
 
       - name: 查看克隆后的目录结构
         run: |
