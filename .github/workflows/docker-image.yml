@@ -12,6 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: 检查磁盘空间
+        run: df -h
+      - name: 清理磁盘空间
+        run: |
+         sudo rm -rf /usr/share/dotnet
+         sudo rm -rf /usr/local/lib/android
+         sudo rm -rf /opt/ghc
+         sudo rm -rf /opt/hostedtoolcache/CodeQL
+         docker system prune -af
+         df -h
       - name: 拉取Gitee仓库内容
         run: |
           git clone --branch master https://${{ secrets.GITEE_USERNAME }}:${{ secrets.GITEE_TOKEN }}@gitee.com/taozhang09/thingsboard.git source-code
