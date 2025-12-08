@@ -14,3 +14,4 @@ jobs:
     steps:
       - name: 检查磁盘空间
         run: df -h
+             sudo du -h --max-depth=2 / | sort -rh | head -n 20
